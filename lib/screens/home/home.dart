@@ -25,17 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
         appBar: appBarWidget(context),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(children: <Widget>[
-            FadeIn(5.0, newsWidget(context)),
-            FadeIn(6.0, latencyWidget(context)),
-            FadeIn(7.0, locationWidget(context))
-          ]),
-        ),
+        body: Column(children: <Widget>[
+          FadeIn(5.0, newsWidget(context)),
+          FadeIn(6.0, latencyWidget(context)),
+          FadeIn(7.0, locationWidget(context))
+        ]),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           color: Theme.of(context).secondaryHeaderColor,
           height: 52.0,
           index: 2,
