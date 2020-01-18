@@ -1,3 +1,4 @@
+import 'package:app/screens/home/locationWidget.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,13 +25,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
         appBar: appBarWidget(context),
-        body: Column(children: <Widget>[
-          FadeIn(5.0, newsWidget(context)),
-          FadeIn(6.0, latencyWidget(context))
-        ]),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(children: <Widget>[
+            FadeIn(5.0, newsWidget(context)),
+            FadeIn(6.0, latencyWidget(context)),
+            FadeIn(7.0, locationWidget(context))
+          ]),
+        ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: Colors.transparent,
           color: Theme.of(context).secondaryHeaderColor,
           height: 52.0,
           index: 2,
