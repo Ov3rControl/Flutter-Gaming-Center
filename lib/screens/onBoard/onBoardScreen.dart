@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:app/screens/home/home.dart';
 import '../../theme/styles.dart';
+import '../../animations/fadeIn.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key key}) : super(key: key);
@@ -64,6 +64,7 @@ class OnBoardingScreen extends StatelessWidget {
       onDone: () => _onIntroEnd(context),
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
       showSkipButton: true,
+      curve: Curves.easeInQuad,
       skipFlex: 0,
       nextFlex: 0,
       skip: const Text('Skip'),
@@ -73,6 +74,7 @@ class OnBoardingScreen extends StatelessWidget {
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Colors.white70,
+        activeColor: Colors.black87,
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),

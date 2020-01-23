@@ -11,7 +11,7 @@ appBarWidget(context) {
     automaticallyImplyLeading: false,
     textTheme: TextTheme(title: TextStyle(fontSize: 12.0, color: Colors.white)),
     title: FadeIn(
-        4.0,
+        2.0,
         Row(
           children: <Widget>[
             SizedBox(width: 10),
@@ -99,7 +99,7 @@ appBarWidget(context) {
         )),
     actions: <Widget>[
       FadeIn(
-          4.0,
+          2.0,
           IconButton(
             icon: Icon(
               FontAwesomeIcons.qrcode,

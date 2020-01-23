@@ -29,9 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         appBar: appBarWidget(context),
         body: Column(children: <Widget>[
-          FadeIn(5.0, newsWidget(context)),
-          FadeIn(6.0, latencyWidget(context)),
-          FadeIn(7.0, locationWidget(context))
+          FadeIn(2.0, newsWidget(context)),
+          FadeIn(3.0, latencyWidget(context)),
+          FadeIn(4.0, locationWidget(context))
         ]),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         bottomNavigationBar: CurvedNavigationBar(
