@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   device_preview:
   flutter_screenutil: ^1.0.2
-
+  introduction_screen:
 dev_dependencies:
   flutter_test:
     sdk: flutter
