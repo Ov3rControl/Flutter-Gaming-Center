@@ -5,7 +5,9 @@ import './theme/styles.dart';
 import './routes.dart';
 
 void main() => runApp(
-      MyApp(),
+      DevicePreview(
+        builder: (context) => MyApp(),
+      ),
     );
 
 /// This Widget is the main application widget.
@@ -15,7 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //builder: DevicePreview.appBuilder,
+      locale: DevicePreview.of(context).locale, // <--- Add the locale
+      builder: DevicePreview.appBuilder, // <--- Add the builder
       theme: appTheme(),
       title: _title,
       initialRoute: '/',

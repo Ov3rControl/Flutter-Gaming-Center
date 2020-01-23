@@ -28,7 +28,8 @@ appBarWidget(context) {
                 child: Stack(
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: ExactAssetImage('assets/Gold.jpg'),
+                      backgroundImage:
+                          ExactAssetImage('assets/Emblem_Gold.png'),
                     ),
                     Positioned(
                       left: 25.0,

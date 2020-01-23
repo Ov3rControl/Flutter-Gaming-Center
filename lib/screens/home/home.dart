@@ -8,6 +8,9 @@ import 'latencyWidget.dart';
 import 'newsWidget.dart';
 import 'appBarWidget.dart';
 
+int _page = 0;
+GlobalKey _bottomNavigationKey = GlobalKey();
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -32,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ]),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         bottomNavigationBar: CurvedNavigationBar(
+          key: _bottomNavigationKey,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           color: Theme.of(context).secondaryHeaderColor,
           height: 52.0,
@@ -45,7 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Icon(Icons.account_circle, size: 30),
           ],
           onTap: (index) {
-            //Handle button tap
+            setState(() {
+              _page = index;
+            });
           },
         ),
         drawer: Drawer());
