@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
       minimum: const EdgeInsets.all(16.0),
       child: Center(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             FlutterLogo(
@@ -55,9 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextField(
                 cursorColor: Theme.of(context).secondaryHeaderColor,
                 style: new TextStyle(
+                    fontSize: ScreenUtil().setSp(32),
                     decoration: TextDecoration.none,
                     letterSpacing: 1.2,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: Theme.of(context).secondaryHeaderColor),
                 decoration: InputDecoration(
                   border: InputBorder.none,
@@ -89,9 +90,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: passwordVisible,
                 cursorColor: Theme.of(context).secondaryHeaderColor,
                 style: new TextStyle(
+                    fontSize: ScreenUtil().setSp(32),
                     decoration: TextDecoration.none,
                     letterSpacing: 1.2,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: Theme.of(context).secondaryHeaderColor),
                 decoration: InputDecoration(
                   border: InputBorder.none,
@@ -123,8 +125,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
+            SizedBox(height: ScreenUtil().setHeight(20)),
+            Container(
+              margin: const EdgeInsets.only(right: 7),
+              alignment: Alignment.centerRight,
+              child: Text(
+                'Forgot your password?',
+                style:
+                    TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
+              ),
+            ),
             new Padding(
-              padding: const EdgeInsets.fromLTRB(9, 26, 9, 26),
+              padding: const EdgeInsets.fromLTRB(9, 18, 9, 26),
               child: new MaterialButton(
                   child: setUpButtonChild(),
                   onPressed: () {
@@ -140,6 +152,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Theme.of(context).secondaryHeaderColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(6))),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(180)),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                children: <Widget>[
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Not a member? ',
+                          textScaleFactor: 1.2,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, color: Colors.white),
+                        ),
+                        Text(
+                          'JOIN NOW',
+                          textScaleFactor: 1.2,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).secondaryHeaderColor),
+                        ),
+                      ]),
+                ],
+              ),
             )
           ],
         ),
@@ -173,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     Timer(Duration(milliseconds: 3300), () {
       setState(() {
-        _state = 2;
+        _state = 0;
       });
     });
   }
