@@ -1,6 +1,7 @@
+import 'package:app/screens/home/home.dart';
+import 'package:app/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:app/screens/home/home.dart';
 import '../../theme/styles.dart';
 import '../../animations/fadeIn.dart';
 
