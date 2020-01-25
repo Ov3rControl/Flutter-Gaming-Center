@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  int _state = 0;
   @override
   void initState() {
     passwordVisible = false;
@@ -120,9 +123,58 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
+            new Padding(
+              padding: const EdgeInsets.fromLTRB(9, 26, 9, 26),
+              child: new MaterialButton(
+                  child: setUpButtonChild(),
+                  onPressed: () {
+                    setState(() {
+                      if (_state == 0) {
+                        animateButton();
+                      }
+                    });
+                  },
+                  elevation: 4.0,
+                  minWidth: double.infinity,
+                  height: ScreenUtil().setHeight(90),
+                  color: Theme.of(context).secondaryHeaderColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(6))),
+            )
           ],
         ),
       ),
     ));
+  }
+
+  Widget setUpButtonChild() {
+    if (_state == 0) {
+      return new Text(
+        "LOGIN",
+        textScaleFactor: 1.2,
+        style: const TextStyle(
+            color: Colors.white,
+            letterSpacing: 1.2,
+            fontWeight: FontWeight.bold),
+      );
+    } else if (_state == 1) {
+      return CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+      );
+    } else {
+      return Icon(Icons.check, size: 38, color: Colors.white);
+    }
+  }
+
+  void animateButton() {
+    setState(() {
+      _state = 1;
+    });
+
+    Timer(Duration(milliseconds: 3300), () {
+      setState(() {
+        _state = 2;
+      });
+    });
   }
 }
