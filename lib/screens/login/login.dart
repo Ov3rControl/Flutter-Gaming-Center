@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:app/screens/home/home.dart';
+import 'package:app/navigation/bottomNavigation/bottomNavigationWidget.dart';
 import 'package:app/screens/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _home(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => HomeScreen()),
+      MaterialPageRoute(builder: (_) => BottomNavigation()),
     );
   }
 
