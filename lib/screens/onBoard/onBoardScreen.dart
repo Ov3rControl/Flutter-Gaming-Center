@@ -1,8 +1,6 @@
-import 'package:app/screens/home/home.dart';
 import 'package:app/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import '../../theme/styles.dart';
 import '../../animations/fadeIn.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -10,7 +8,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => HomeScreen()),
+      MaterialPageRoute(builder: (_) => LoginScreen()),
     );
   }
 
@@ -63,7 +61,7 @@ class OnBoardingScreen extends StatelessWidget {
         ),
       ],
       onDone: () => _onIntroEnd(context),
-      //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
+      onSkip: () => _onIntroEnd(context), // You can override onSkip callback
       showSkipButton: true,
       curve: Curves.easeInQuad,
       skipFlex: 0,

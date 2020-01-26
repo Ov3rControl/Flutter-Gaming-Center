@@ -1,37 +1,32 @@
 import 'dart:async';
-import 'package:app/screens/home/home.dart';
-import 'package:app/screens/register/register.dart';
+import 'package:app/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../animations/fadeIn.dart';
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   int _state = 0;
   @override
   void initState() {
     passwordVisible = true;
+    confirmPasswordVisible = true;
   }
 
-  void _register(context) {
+  void _login(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => RegisterScreen()),
-    );
-  }
-
-  void _home(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => HomeScreen()),
+      MaterialPageRoute(builder: (_) => LoginScreen()),
     );
   }
 
   // Initially password is obscure
   bool passwordVisible = true;
+  bool confirmPasswordVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +53,45 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               width: ScreenUtil().setWidth(650),
               height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 32),
+              margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
                 color: Color(0xFF272B2E),
               ),
               child: TextField(
+                textCapitalization: TextCapitalization.words,
+                cursorColor: Theme.of(context).secondaryHeaderColor,
+                style: new TextStyle(
+                    fontSize: ScreenUtil().setSp(32),
+                    decoration: TextDecoration.none,
+                    letterSpacing: 1.2,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).secondaryHeaderColor),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  icon: Icon(
+                    Icons.person,
+                    color: Theme.of(context).secondaryHeaderColor,
+                    size: 30,
+                  ),
+                  hintText: 'FULL NAME',
+                  hintStyle:
+                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
+                ),
+              ),
+            ),
+            Container(
+              width: ScreenUtil().setWidth(650),
+              height: ScreenUtil().setHeight(90),
+              margin: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(6)),
+                color: Color(0xFF272B2E),
+              ),
+              child: TextField(
+                textCapitalization: TextCapitalization.words,
                 cursorColor: Theme.of(context).secondaryHeaderColor,
                 style: new TextStyle(
                     fontSize: ScreenUtil().setSp(32),
@@ -88,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               width: ScreenUtil().setWidth(650),
               height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 32),
+              margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -129,14 +156,48 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(20)),
             Container(
-              margin: const EdgeInsets.only(right: 7),
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Forgot your password?',
-                style:
-                    TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
+              width: ScreenUtil().setWidth(650),
+              height: ScreenUtil().setHeight(90),
+              margin: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(6)),
+                color: Color(0xFF272B2E),
+              ),
+              child: TextFormField(
+                obscureText: confirmPasswordVisible,
+                cursorColor: Theme.of(context).secondaryHeaderColor,
+                style: new TextStyle(
+                    fontSize: ScreenUtil().setSp(32),
+                    decoration: TextDecoration.none,
+                    letterSpacing: 1.2,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).secondaryHeaderColor),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  icon: Icon(
+                    Icons.lock,
+                    color: Theme.of(context).secondaryHeaderColor,
+                    size: 30,
+                  ),
+                  hintText: 'CONFIRM PASSWORD',
+                  hintStyle:
+                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        confirmPasswordVisible
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                        color: Theme.of(context).secondaryHeaderColor,
+                        size: 30),
+                    onPressed: () {
+                      setState(() {
+                        confirmPasswordVisible = !confirmPasswordVisible;
+                      });
+                    },
+                  ),
+                ),
               ),
             ),
             new Padding(
@@ -157,38 +218,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(6))),
             ),
-            SizedBox(height: ScreenUtil().setHeight(180)),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                children: <Widget>[
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Not a member? ',
-                          textScaleFactor: 1.2,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, color: Colors.white),
-                        ),
-                        new GestureDetector(
-                          onTap: () {
-                            _register(context);
-                          },
-                          child: Text(
-                            'JOIN NOW',
-                            textScaleFactor: 1.2,
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).secondaryHeaderColor),
-                          ),
-                        ),
-                      ]),
-                ],
-              ),
-            )
           ],
         ),
       ),
@@ -198,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget setUpButtonChild() {
     if (_state == 0) {
       return new Text(
-        "LOGIN",
+        "CREATE ACCOUNT",
         textScaleFactor: 1.2,
         style: const TextStyle(
             color: Colors.white,
@@ -221,7 +250,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     Timer(Duration(milliseconds: 3300), () {
       setState(() {
-        _home(context);
+        _login(context);
       });
     });
   }
