@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:app/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,12 +15,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void initState() {
     passwordVisible = true;
     confirmPasswordVisible = true;
-  }
-
-  void _login(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => LoginScreen()),
-    );
   }
 
   // Initially password is obscure
@@ -250,7 +243,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     Timer(Duration(milliseconds: 3300), () {
       setState(() {
-        _login(context);
+        Navigator.pushNamed(context, '/login');
       });
     });
   }

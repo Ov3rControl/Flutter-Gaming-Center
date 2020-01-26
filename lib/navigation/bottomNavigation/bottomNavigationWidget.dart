@@ -1,9 +1,9 @@
+import 'package:app/navigation/bottomNavigation/components/appBarWidget.dart';
 import 'package:app/screens/home/home.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'appBarWidget.dart';
 
 GlobalKey _bottomNavigationKey = GlobalKey();
 

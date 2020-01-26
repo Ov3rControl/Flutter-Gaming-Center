@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'package:app/navigation/bottomNavigation/bottomNavigationWidget.dart';
-import 'package:app/screens/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,18 +14,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     passwordVisible = true;
-  }
-
-  void _register(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => RegisterScreen()),
-    );
-  }
-
-  void _home(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => BottomNavigation()),
-    );
   }
 
   // Initially password is obscure
@@ -174,7 +160,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         new GestureDetector(
                           onTap: () {
-                            _register(context);
+                            Navigator.pushReplacementNamed(
+                                context, '/register');
                           },
                           child: Text(
                             'JOIN NOW',
@@ -221,7 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     Timer(Duration(milliseconds: 3300), () {
       setState(() {
-        _home(context);
+        Navigator.pushReplacementNamed(context, '/bottomNavigation');
       });
     });
   }
