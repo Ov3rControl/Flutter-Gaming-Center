@@ -1,4 +1,5 @@
 import 'package:app/navigation/bottomNavigation/components/appBarWidget.dart';
+import 'package:app/screens/features/features.dart';
 import 'package:app/screens/home/home.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +15,7 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
-  final List<Widget> _children = [
-    HomeScreen(),
-  ];
+  final List<Widget> _children = [HomeScreen(), FeaturesScreen()];
   @override
   void initState() {
     super.initState();

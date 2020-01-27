@@ -1,21 +1,22 @@
-import 'package:app/screens/home/locationWidget.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:app/screens/features/components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../animations/fadeIn.dart';
 
-class HomeScreen extends StatefulWidget {
+class FeaturesScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _FeaturesScreenState createState() => _FeaturesScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FeaturesScreenState extends State<FeaturesScreen> {
   @override
   void initState() {
     super.initState();
   }
 
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return Scaffold(body: Body());
+  }
 }
