@@ -13,7 +13,7 @@ script:
   - flutter/bin/flutter build ios --debug --no-codesign
 cache:
   directories:
-    - $HOME/.pub-cache
+    - "$HOME/.pub-cache"
 before_deploy:
   - pushd build/ios/iphoneos
   - mkdir Payload
@@ -22,3 +22,11 @@ before_deploy:
   - cd ..
   - zip -r app.ipa Payload
   - popd
+deploy:
+  provider: releases
+  api_key:
+    secure: ZEs1sVkksLnsmt8B/9FX/vWbUQ/N2MNRTtCaC3ViIPTCtjnD4ifb2rX6jvoOnQMgHfH9sdSF/pgsZQk7zc/8bdI1qdmzTDJqpbWEFQN4OEJ3UZ6LTtEyaqc0QwEhN0XBprg3gQRkPdEjgDs6+YvFlHGdQxTVYhbxZMu7o+qgc+3ZGRX3BU5+NiDlCL9nad9cYXH2C9WhfPO8b9+NqpgJDshmvgnL/DjlBu9IciglItWflrhzDsZLEOxx5OcA2YU9bbwGxZUdoBMe5DlQp5hM0No5tywdCM8jHl1iJwzdIB21DOIDuutt/70caLsf4abGS7Zzbv5cirHezk+/ZvkCDywOamEraVMN3uqrZr1pAPTtLsE1wg4yf9vjOKiTfb7xcWXqAuKHdr4Abz8Mz3uSPKeuXiA+b+BXq3WBkL3WWUt4epqmkmYWm3D1ntubMAz6CEJADl5SzDV1L5+wbFYUDHJWw2FUS2Cgde69Ajc7na25R1nrSJCRrrwmpvDUUK5ERinpKxZ1JaklinL1iKSh6Havpd3AEfdNFhBtq8H1wZAwLAWOONl3sXYd5rk551FCgGo9N/VOJmJvxUQSDUZ46ReoQNyPY8PtNj8itLtZ2hknT2Dl4J9T/SgsevpHP14aR7sHynGc0zu8Ie3EFtfPKHdpuOZrJ1kgohFYfIZrxyQ=
+  file: build/ios/iphoneos/app.ipa
+  skip_cleanup: true
+  on:
+    repo: Ov3rControl/Flutter-Gaming-Center
