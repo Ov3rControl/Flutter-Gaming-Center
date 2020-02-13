@@ -1,6 +1,6 @@
 import 'package:app/animations/fadeIn.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 appBarWidget(context) {
   return AppBar(
@@ -63,7 +63,7 @@ appBarWidget(context) {
                           size: 12.0,
                         ),
                         SizedBox(width: 2.0),
-                        Text('Ov3rControl')
+                        Text('Doublelift')
                       ],
                     ),
                     SizedBox(height: 1.0),
@@ -101,7 +101,7 @@ appBarWidget(context) {
           2.0,
           IconButton(
             icon: Icon(
-              FontAwesomeIcons.qrcode,
+              FontAwesome.qrcode,
               color: Theme.of(context).secondaryHeaderColor,
               size: 30.0,
             ),

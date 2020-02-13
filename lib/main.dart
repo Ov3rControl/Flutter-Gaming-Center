@@ -18,11 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
       // locale: DevicePreview.of(context).locale, // <--- Add the locale
       // builder: DevicePreview.appBuilder, // <--- Add the builder
       theme: appTheme(),
       title: _title,
-      initialRoute: '/',
+      initialRoute: '/bottomNavigation',
       routes: routes,
     );
   }

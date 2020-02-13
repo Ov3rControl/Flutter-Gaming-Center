@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF272B2E),
+                color: Color(0xFF1E2326),
               ),
               child: TextField(
                 cursorColor: Theme.of(context).secondaryHeaderColor,
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF272B2E),
+                color: Color(0xFF1E2326),
               ),
               child: TextFormField(
                 obscureText: passwordVisible,
