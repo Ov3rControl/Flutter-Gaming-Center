@@ -17,6 +17,10 @@ class _LeaderboardsScreenState extends State<LeaderboardsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Body());
+    return Scaffold(
+        body: Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Body(),
+    ));
   }
 }

@@ -39,7 +39,7 @@ class Body extends StatelessWidget {
                 AvatarGlow(
                   startDelay: Duration(milliseconds: 1000),
                   glowColor: Colors.grey[500],
-                  endRadius: 50.0,
+                  endRadius: ScreenUtil().setWidth(95),
                   duration: Duration(milliseconds: 2000),
                   repeat: true,
                   showTwoGlows: true,
@@ -62,7 +62,7 @@ class Body extends StatelessWidget {
                 AvatarGlow(
                   startDelay: Duration(milliseconds: 1000),
                   glowColor: Colors.amberAccent[700],
-                  endRadius: 80.0,
+                  endRadius: ScreenUtil().setWidth(135),
                   duration: Duration(milliseconds: 2000),
                   repeat: true,
                   showTwoGlows: true,
@@ -85,7 +85,7 @@ class Body extends StatelessWidget {
                 AvatarGlow(
                   startDelay: Duration(milliseconds: 1000),
                   glowColor: Colors.red,
-                  endRadius: 50.0,
+                  endRadius: ScreenUtil().setWidth(95),
                   duration: Duration(milliseconds: 2000),
                   repeat: true,
                   showTwoGlows: true,
@@ -114,8 +114,6 @@ class Body extends StatelessWidget {
                 Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(top: 10),
-                    width: ScreenUtil().setWidth(650),
-                    height: ScreenUtil().setHeight(110),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -163,8 +161,6 @@ class Body extends StatelessWidget {
                 Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(top: 10),
-                    width: ScreenUtil().setWidth(650),
-                    height: ScreenUtil().setHeight(110),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -212,8 +208,6 @@ class Body extends StatelessWidget {
                 Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(top: 10),
-                    width: ScreenUtil().setWidth(650),
-                    height: ScreenUtil().setHeight(110),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -261,8 +255,6 @@ class Body extends StatelessWidget {
                 Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(top: 10),
-                    width: ScreenUtil().setWidth(650),
-                    height: ScreenUtil().setHeight(110),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(6)),
