@@ -14,7 +14,6 @@ class Body extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.only(top: 10),
-            height: ScreenUtil().setHeight(135),
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -31,7 +30,7 @@ class Body extends StatelessWidget {
                       color: Color(0xFFA8A9AD),
                       size: 58,
                     ),
-                    SizedBox(width: 10.0),
+                    SizedBox(width: 8.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -78,7 +77,6 @@ class Body extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.only(top: 10),
-            height: ScreenUtil().setHeight(135),
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -95,7 +93,7 @@ class Body extends StatelessWidget {
                       color: Color(0xFFA8A9AD),
                       size: 58,
                     ),
-                    SizedBox(width: 10.0),
+                    SizedBox(width: 8.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -107,7 +105,7 @@ class Body extends StatelessWidget {
                           ),
                           SizedBox(width: 3.0),
                           Text(
-                            'Team Room | PC-06',
+                            'TR | PC-06',
                             style: TextStyle(
                                 fontSize: ScreenUtil().setSp(34),
                                 color: Colors.grey[350]),
@@ -132,7 +130,7 @@ class Body extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text('10H 01M',
+                Text('10H',
                     style: TextStyle(
                         fontSize: ScreenUtil().setSp(32),
                         color: Colors.grey[350]))
@@ -142,7 +140,6 @@ class Body extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.only(top: 10),
-            height: ScreenUtil().setHeight(135),
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -159,7 +156,7 @@ class Body extends StatelessWidget {
                       color: Color(0xFFA8A9AD),
                       size: 58,
                     ),
-                    SizedBox(width: 10.0),
+                    SizedBox(width: 8.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
