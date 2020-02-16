@@ -41,7 +41,7 @@ class _BodyState extends State<Body> {
                 ),
               ),
               Text(
-                'Counter Strike : Global Offensive',
+                'CS:GO',
                 textAlign: TextAlign.center,
                 textScaleFactor: 1.0,
                 overflow: TextOverflow.clip,
