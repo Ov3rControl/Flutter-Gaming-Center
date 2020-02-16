@@ -27,175 +27,174 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     return Scaffold(
         body: SafeArea(
-      minimum: const EdgeInsets.all(16.0),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            FlutterLogo(
-              colors: Colors.orange,
-              size: 200.0,
-            ),
-            // Image(
-            //   image: AssetImage('assets/Emblem_Master.png'),
-            //   width: ScreenUtil().setWidth(550),
-            //   height: ScreenUtil().setHeight(350),
-            // ),
-            SizedBox(height: 10),
-            Container(
-              width: ScreenUtil().setWidth(650),
-              height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF1E2326),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              FlutterLogo(
+                colors: Colors.orange,
+                size: 200.0,
               ),
-              child: TextField(
-                textCapitalization: TextCapitalization.words,
-                cursorColor: Theme.of(context).secondaryHeaderColor,
-                style: new TextStyle(
-                    fontSize: ScreenUtil().setSp(32),
-                    decoration: TextDecoration.none,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).secondaryHeaderColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Icons.person,
-                    color: Theme.of(context).secondaryHeaderColor,
-                    size: 30,
-                  ),
-                  hintText: 'FULL NAME',
-                  hintStyle:
-                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
+              // Image(
+              //   image: AssetImage('assets/Emblem_Master.png'),
+              //   width: ScreenUtil().setWidth(550),
+              //   height: ScreenUtil().setHeight(350),
+              // ),
+              Container(
+                height: ScreenUtil().setHeight(100),
+                margin: EdgeInsets.only(top: 10),
+                padding:
+                    EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(6)),
+                  color: Color(0xFF1E2326),
                 ),
-              ),
-            ),
-            Container(
-              width: ScreenUtil().setWidth(650),
-              height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF1E2326),
-              ),
-              child: TextField(
-                textCapitalization: TextCapitalization.words,
-                cursorColor: Theme.of(context).secondaryHeaderColor,
-                style: new TextStyle(
-                    fontSize: ScreenUtil().setSp(32),
-                    decoration: TextDecoration.none,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).secondaryHeaderColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Icons.person_pin,
-                    color: Theme.of(context).secondaryHeaderColor,
-                    size: 30,
-                  ),
-                  hintText: 'USERNAME',
-                  hintStyle:
-                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
-                ),
-              ),
-            ),
-            Container(
-              width: ScreenUtil().setWidth(650),
-              height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF1E2326),
-              ),
-              child: TextFormField(
-                obscureText: passwordVisible,
-                cursorColor: Theme.of(context).secondaryHeaderColor,
-                style: new TextStyle(
-                    fontSize: ScreenUtil().setSp(32),
-                    decoration: TextDecoration.none,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).secondaryHeaderColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Icons.lock,
-                    color: Theme.of(context).secondaryHeaderColor,
-                    size: 30,
-                  ),
-                  hintText: 'PASSWORD',
-                  hintStyle:
-                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
-                  suffixIcon: IconButton(
+                child: TextField(
+                  textCapitalization: TextCapitalization.words,
+                  cursorColor: Theme.of(context).secondaryHeaderColor,
+                  style: new TextStyle(
+                      fontSize: ScreenUtil().setSp(32),
+                      decoration: TextDecoration.none,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).secondaryHeaderColor),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
                     icon: Icon(
-                        passwordVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                        color: Theme.of(context).secondaryHeaderColor,
-                        size: 30),
-                    onPressed: () {
-                      setState(() {
-                        passwordVisible = !passwordVisible;
-                      });
-                    },
+                      Icons.person,
+                      color: Theme.of(context).secondaryHeaderColor,
+                      size: 30,
+                    ),
+                    hintText: 'FULL NAME',
+                    hintStyle: TextStyle(
+                        color: Theme.of(context).secondaryHeaderColor),
                   ),
                 ),
               ),
-            ),
-            Container(
-              width: ScreenUtil().setWidth(650),
-              height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF1E2326),
-              ),
-              child: TextFormField(
-                obscureText: confirmPasswordVisible,
-                cursorColor: Theme.of(context).secondaryHeaderColor,
-                style: new TextStyle(
-                    fontSize: ScreenUtil().setSp(32),
-                    decoration: TextDecoration.none,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).secondaryHeaderColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Icons.lock,
-                    color: Theme.of(context).secondaryHeaderColor,
-                    size: 30,
-                  ),
-                  hintText: 'CONFIRM PASSWORD',
-                  hintStyle:
-                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
-                  suffixIcon: IconButton(
+              Container(
+                height: ScreenUtil().setHeight(100),
+                margin: EdgeInsets.only(top: 10),
+                padding:
+                    EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(6)),
+                  color: Color(0xFF1E2326),
+                ),
+                child: TextField(
+                  textCapitalization: TextCapitalization.words,
+                  cursorColor: Theme.of(context).secondaryHeaderColor,
+                  style: new TextStyle(
+                      fontSize: ScreenUtil().setSp(32),
+                      decoration: TextDecoration.none,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).secondaryHeaderColor),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
                     icon: Icon(
-                        confirmPasswordVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                        color: Theme.of(context).secondaryHeaderColor,
-                        size: 30),
-                    onPressed: () {
-                      setState(() {
-                        confirmPasswordVisible = !confirmPasswordVisible;
-                      });
-                    },
+                      Icons.person_pin,
+                      color: Theme.of(context).secondaryHeaderColor,
+                      size: 30,
+                    ),
+                    hintText: 'USERNAME',
+                    hintStyle: TextStyle(
+                        color: Theme.of(context).secondaryHeaderColor),
                   ),
                 ),
               ),
-            ),
-            new Padding(
-              padding: const EdgeInsets.fromLTRB(9, 18, 9, 26),
-              child: new MaterialButton(
+              Container(
+                height: ScreenUtil().setHeight(100),
+                margin: EdgeInsets.only(top: 10),
+                padding:
+                    EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(6)),
+                  color: Color(0xFF1E2326),
+                ),
+                child: TextFormField(
+                  obscureText: passwordVisible,
+                  cursorColor: Theme.of(context).secondaryHeaderColor,
+                  style: new TextStyle(
+                      fontSize: ScreenUtil().setSp(32),
+                      decoration: TextDecoration.none,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).secondaryHeaderColor),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    icon: Icon(
+                      Icons.lock,
+                      color: Theme.of(context).secondaryHeaderColor,
+                      size: 30,
+                    ),
+                    hintText: 'PASSWORD',
+                    hintStyle: TextStyle(
+                        color: Theme.of(context).secondaryHeaderColor),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          passwordVisible
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Theme.of(context).secondaryHeaderColor,
+                          size: ScreenUtil().setSp(50)),
+                      onPressed: () {
+                        setState(() {
+                          passwordVisible = !passwordVisible;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: ScreenUtil().setHeight(100),
+                margin: EdgeInsets.only(top: 10),
+                padding:
+                    EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(6)),
+                  color: Color(0xFF1E2326),
+                ),
+                child: TextFormField(
+                  obscureText: confirmPasswordVisible,
+                  cursorColor: Theme.of(context).secondaryHeaderColor,
+                  style: new TextStyle(
+                      fontSize: ScreenUtil().setSp(32),
+                      decoration: TextDecoration.none,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).secondaryHeaderColor),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    icon: Icon(
+                      Icons.lock,
+                      color: Theme.of(context).secondaryHeaderColor,
+                      size: 30,
+                    ),
+                    hintText: 'CONFIRM PASSWORD',
+                    hintStyle: TextStyle(
+                        color: Theme.of(context).secondaryHeaderColor),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          confirmPasswordVisible
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Theme.of(context).secondaryHeaderColor,
+                          size: ScreenUtil().setSp(50)),
+                      onPressed: () {
+                        setState(() {
+                          confirmPasswordVisible = !confirmPasswordVisible;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              new MaterialButton(
                   child: setUpButtonChild(),
                   onPressed: () {
                     setState(() {
@@ -206,12 +205,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                   elevation: 4.0,
                   minWidth: double.infinity,
-                  height: ScreenUtil().setHeight(90),
+                  height: ScreenUtil().setHeight(100),
                   color: Theme.of(context).secondaryHeaderColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(6))),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     ));
