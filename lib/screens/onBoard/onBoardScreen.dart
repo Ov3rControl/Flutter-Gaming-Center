@@ -34,7 +34,7 @@ class OnBoardingScreen extends StatelessWidget {
         PageViewModel(
           title: "PLAY YOUR FAVORITE GAMES",
           body:
-              "Providing a Completely Unique Gaming Experience for Every Ene in the E-Sports industry",
+              "Providing a Completely Unique Gaming Experience for Every One in the E-Sports industry",
           image: _buildImage('fortnite'),
           decoration: pageDecoration,
         ),

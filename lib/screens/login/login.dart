@@ -25,125 +25,144 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
         body: SafeArea(
-      minimum: const EdgeInsets.all(16.0),
-      child: Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            FlutterLogo(
-              colors: Colors.orange,
-              size: 200.0,
-            ),
-            // Image(
-            //   image: AssetImage('assets/Emblem_Master.png'),
-            //   width: ScreenUtil().setWidth(550),
-            //   height: ScreenUtil().setHeight(350),
-            // ),
-            SizedBox(height: 10),
-            Container(
-              width: ScreenUtil().setWidth(650),
-              height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 32),
-              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF1E2326),
-              ),
-              child: TextField(
-                cursorColor: Theme.of(context).secondaryHeaderColor,
-                style: new TextStyle(
-                    fontSize: ScreenUtil().setSp(32),
-                    decoration: TextDecoration.none,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).secondaryHeaderColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Icons.person_pin,
-                    color: Theme.of(context).secondaryHeaderColor,
-                    size: 30,
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Flexible(
+                    flex: 3,
+                    fit: FlexFit.tight,
+                    child: FlutterLogo(
+                      colors: Colors.orange,
+                      size: 200,
+                    ),
                   ),
-                  hintText: 'USERNAME',
-                  hintStyle:
-                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
-                ),
-              ),
-            ),
-            Container(
-              width: ScreenUtil().setWidth(650),
-              height: ScreenUtil().setHeight(90),
-              margin: EdgeInsets.only(top: 32),
-              padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                color: Color(0xFF1E2326),
-              ),
-              child: TextFormField(
-                obscureText: passwordVisible,
-                cursorColor: Theme.of(context).secondaryHeaderColor,
-                style: new TextStyle(
-                    fontSize: ScreenUtil().setSp(32),
-                    decoration: TextDecoration.none,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).secondaryHeaderColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: Icon(
-                    Icons.lock,
-                    color: Theme.of(context).secondaryHeaderColor,
-                    size: 30,
+                  // Image(
+                  //   image: AssetImage('assets/Emblem_Master.png'),
+                  //   width: ScreenUtil().setWidth(550),
+                  //   height: ScreenUtil().setHeight(350),
+                  // ),
+                  SizedBox(
+                    height: 20,
                   ),
-                  hintText: 'PASSWORD',
-                  hintStyle:
-                      TextStyle(color: Theme.of(context).secondaryHeaderColor),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                        passwordVisible
-                            ? Icons.visibility_off
-                            : Icons.visibility,
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      height: ScreenUtil().setHeight(100),
+                      margin: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(
+                          top: 4, left: 16, right: 16, bottom: 4),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        color: Color(0xFF1E2326),
+                      ),
+                      alignment: Alignment.center,
+                      child: TextField(
+                        cursorColor: Theme.of(context).secondaryHeaderColor,
+                        style: new TextStyle(
+                            fontSize: ScreenUtil().setSp(32),
+                            decoration: TextDecoration.none,
+                            letterSpacing: 1.2,
+                            fontWeight: FontWeight.w500,
+                            color: Theme.of(context).secondaryHeaderColor),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          icon: Icon(
+                            Icons.person_pin,
+                            color: Theme.of(context).secondaryHeaderColor,
+                            size: 30,
+                          ),
+                          hintText: 'USERNAME',
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).secondaryHeaderColor),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(top: 10),
+                      height: ScreenUtil().setHeight(100),
+                      padding: EdgeInsets.only(
+                          top: 4, left: 16, right: 16, bottom: 4),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        color: Color(0xFF1E2326),
+                      ),
+                      child: TextFormField(
+                        obscureText: passwordVisible,
+                        cursorColor: Theme.of(context).secondaryHeaderColor,
+                        style: new TextStyle(
+                            fontSize: ScreenUtil().setSp(32),
+                            decoration: TextDecoration.none,
+                            letterSpacing: 1.2,
+                            fontWeight: FontWeight.w500,
+                            color: Theme.of(context).secondaryHeaderColor),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          icon: Icon(
+                            Icons.lock,
+                            color: Theme.of(context).secondaryHeaderColor,
+                            size: 30,
+                          ),
+                          hintText: 'PASSWORD',
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).secondaryHeaderColor),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                                passwordVisible
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Theme.of(context).secondaryHeaderColor,
+                                size: ScreenUtil().setSp(55)),
+                            onPressed: () {
+                              setState(() {
+                                passwordVisible = !passwordVisible;
+                              });
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 10.0),
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'Forgot your password?',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, color: Colors.white),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: MaterialButton(
+                        child: setUpButtonChild(),
+                        onPressed: () {
+                          setState(() {
+                            if (_state == 0) {
+                              animateButton();
+                            }
+                          });
+                        },
+                        elevation: 4.0,
+                        minWidth: double.infinity,
+                        height: ScreenUtil().setHeight(100),
                         color: Theme.of(context).secondaryHeaderColor,
-                        size: 30),
-                    onPressed: () {
-                      setState(() {
-                        passwordVisible = !passwordVisible;
-                      });
-                    },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6))),
                   ),
-                ),
+                ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(20)),
-            Container(
-              margin: const EdgeInsets.only(right: 7),
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Forgot your password?',
-                style:
-                    TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
-              ),
-            ),
-            new Padding(
-              padding: const EdgeInsets.fromLTRB(9, 18, 9, 26),
-              child: new MaterialButton(
-                  child: setUpButtonChild(),
-                  onPressed: () {
-                    setState(() {
-                      if (_state == 0) {
-                        animateButton();
-                      }
-                    });
-                  },
-                  elevation: 4.0,
-                  minWidth: double.infinity,
-                  height: ScreenUtil().setHeight(90),
-                  color: Theme.of(context).secondaryHeaderColor,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(6))),
-            ),
-            SizedBox(height: ScreenUtil().setHeight(180)),
             Align(
               alignment: Alignment.bottomCenter,
               child: Column(

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       // builder: DevicePreview.appBuilder, // <--- Add the builder
       theme: appTheme(),
       title: _title,
-      initialRoute: '/bottomNavigation',
+      initialRoute: '/',
       routes: routes,
     );
   }

@@ -1,31 +1,38 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        // {
-        //     "name": "Honor8X",
-        //     "request": "launch",
-        //     "type": "dart",
-        //     "deviceId": "XSQ4C19412001486"
-        // },
-        {
-            "name": "IPhone11ProMax",
-            "request": "launch",
-            "type": "dart",
-            "deviceId": "01549EA0-D250-4E52-81D5-EAB2AEA6029B"
-        },
-        // {
-        //     "name": "Emulator1",
-        //     "request": "launch",
-        //     "type": "dart",
-        //     "deviceId": "emulator-5556"
-        // },
-
-    ],
-    "compounds": [{
-        "name": "All Devices",
-        "configurations": ["IPhone11ProMax"],
-    }]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Honor8X",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "XSQ4C19412001486"
+    },
+    {
+      "name": "IPhone11ProMax",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "01549EA0-D250-4E52-81D5-EAB2AEA6029B"
+    },
+    {
+      "name": "IPhone8",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "E2AEBCF5-9DFA-48CF-9B12-59C897154126"
+    },
+    {
+      "name": "IPhone5s",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "C6DA63F1-2B4A-430A-8197-DE55AE0396F6"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "All Devices",
+      "configurations": ["IPhone11ProMax", "IPhone5s", "IPhone8", "Honor8X"]
+    }
+  ]
 }
