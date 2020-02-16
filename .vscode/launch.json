@@ -11,6 +11,12 @@
       "deviceId": "XSQ4C19412001486"
     },
     {
+      "name": "redmeGo",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "63eac127ce60"
+    },
+    {
       "name": "IPhone11ProMax",
       "request": "launch",
       "type": "dart",
@@ -32,7 +38,13 @@
   "compounds": [
     {
       "name": "All Devices",
-      "configurations": ["IPhone11ProMax", "IPhone5s", "IPhone8", "Honor8X"]
+      "configurations": [
+        "IPhone11ProMax",
+        "IPhone5s",
+        "IPhone8",
+        "Honor8X",
+        "redmeGo"
+      ]
     }
   ]
 }

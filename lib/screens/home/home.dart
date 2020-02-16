@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         fabOpenColor: Theme.of(context).secondaryHeaderColor,
         fabCloseColor: Theme.of(context).secondaryHeaderColor,
         fabMargin: EdgeInsets.only(
-            bottom: ScreenUtil().setHeight(110),
+            bottom: ScreenUtil().setHeight(140),
             right: ScreenUtil().setWidth(30)),
         ringColor: Colors.grey[900].withOpacity(0.91),
         ringDiameter: ScreenUtil().setWidth(400),
