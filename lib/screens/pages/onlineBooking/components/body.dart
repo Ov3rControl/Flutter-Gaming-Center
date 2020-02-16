@@ -109,7 +109,7 @@ class _BodyState extends State<Body> {
         ),
         ExpandableContainer(
             expanded: expandFlag,
-            expandedHeight: 330,
+            expandedHeight: 450,
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[Wrap(children: PC()._pcWidget(context))]))
