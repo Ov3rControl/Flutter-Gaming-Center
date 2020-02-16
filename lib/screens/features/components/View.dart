@@ -53,7 +53,7 @@ featuresView(context, pageController, currentPageNotifier, features) {
                       ),
                       //Circle Avatar
                       Container(
-                          width: 100.0,
+                          width: ScreenUtil().setWidth(180),
                           height: 80.0,
                           decoration: new BoxDecoration(
                             shape: BoxShape.circle,
@@ -89,7 +89,7 @@ featuresView(context, pageController, currentPageNotifier, features) {
 
                   //Two Column Table
                   DataTable(
-                      horizontalMargin: ScreenUtil().setWidth(4),
+                      horizontalMargin: ScreenUtil().setWidth(20),
                       columns: <DataColumn>[
                         DataColumn(
                           label: Text(''),
