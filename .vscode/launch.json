@@ -3,33 +3,29 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [{
-            "name": "Emulator",
-            "request": "launch",
-            "type": "dart",
-            "deviceId": "emulator-5554"
-        },
+    "configurations": [
+        // {
+        //     "name": "Honor8X",
+        //     "request": "launch",
+        //     "type": "dart",
+        //     "deviceId": "XSQ4C19412001486"
+        // },
         {
-            "name": "Redmi_Go",
+            "name": "IPhone11ProMax",
             "request": "launch",
             "type": "dart",
-            "deviceId": "63eac127ce60"
+            "deviceId": "01549EA0-D250-4E52-81D5-EAB2AEA6029B"
         },
-        {
-            "name": "Emulator1",
-            "request": "launch",
-            "type": "dart",
-            "deviceId": "emulator-5556"
-        },
-        {
-            "name": "Honor_8X",
-            "request": "launch",
-            "type": "dart",
-            "deviceId": "XSQ4C19412001486"
-        }
+        // {
+        //     "name": "Emulator1",
+        //     "request": "launch",
+        //     "type": "dart",
+        //     "deviceId": "emulator-5556"
+        // },
+
     ],
     "compounds": [{
         "name": "All Devices",
-        "configurations": ["Emulator", "Honor_8X", "Redmi_Go", "Emulator1"],
+        "configurations": ["IPhone11ProMax"],
     }]
 }
