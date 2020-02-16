@@ -26,7 +26,6 @@ class Body extends StatelessWidget {
               Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(top: 10),
-                  height: ScreenUtil().setHeight(110),
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(6)),
